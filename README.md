@@ -1,1 +1,1 @@
-# Algoritimitos-Sptech-2026
+# Algoritmos-Sptech-2026
