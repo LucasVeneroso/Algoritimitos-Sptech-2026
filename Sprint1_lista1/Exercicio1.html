@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        Insira a cidade natal: <input type="text" id="cidade_natal"><br>
+        Insira sua data de nascimento: <input type="number" id="data_nascimento"><br>
+        <button onclick="'Você nasceu na cidade de ' + imprimeCidade() + ' em ' + imprimeIdade()">CLIQUE EM MIM</button>
+    </div>
+</body>
+</html>
+<script>
+    function imprimeCidade(){
+        alert('Você nasceu na cidade de ' +  cidade_natal.value + ' em ' + data_nascimento.value)
+    }
+</script>

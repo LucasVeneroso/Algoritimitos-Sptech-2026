@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira sua meta economica: <input type="text" id="inp_economia"><br>
+    Insira a quantia guardada: <input type="text" id="inp_saldo"><br>
+    <button onclick="analisar()">Analisar</button>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+    function analisar() {
+        let economia = Number(inp_economia.value);
+        let saldo = Number(inp_saldo.value);
+        if (saldo >= economia) {
+            resposta.innerHTML = `Parabéns, meta alcançada!`
+            if (saldo > economia) {
+            resposta.innerHTML += ` Meta ultrapassada em R$${saldo - economia}`
+            }
+        } else {
+            resposta.innerHTML = `Força! Ainda em busca da meta! Falta R$${economia - saldo}`
+        }
+    }
+</script>

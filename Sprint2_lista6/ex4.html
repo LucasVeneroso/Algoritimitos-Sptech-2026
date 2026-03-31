@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    insira uma palavras: <input type="text" id="inp_palavra1"><br>
+    insira outra palavras: <input type="text" id="inp_palavra2"><br>
+    <button onclick="analisar()">Analisar palavras</button>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        let palavra1 = inp_palavra1.value;
+        let palavra2 = inp_palavra2.value;
+        let mensagem = ``;
+        if(palavra1 == palavra2){
+            mensagem = `As palavras ${palavra1} e ${palavra2} são exatamente iguais!`;
+        } else if(palavra1 != palavra2 && palavra1.toUpperCase() == palavra2.toUpperCase()){
+            mensagem = `As palavras ${palavra1} e ${palavra2} possuem o mesmo conteúdo, mas a digitação é diferente (maiúsculas e minúsculas).`;
+        } else {
+            mensagem = `As palavras ${palavra1} e ${palavra2} são completamente diferentes!.`;
+        }
+        resposta.innerHTML = `${mensagem}`;
+    }
+</script>

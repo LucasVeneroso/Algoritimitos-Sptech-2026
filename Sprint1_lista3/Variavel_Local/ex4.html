@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    insira o valor da pizza: <input type="text" id="input_valor_pizza"><br>
+    insira a quantidade de pessoas: <input type="text" id="input_pessoas"><br>
+    <button onclick="Calcular()">#lovePizza</button>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+    function Calcular(){
+        let valorPizza = Number(input_valor_pizza.value);
+        let numPessoas = Number(input_pessoas.value);
+        let valorPorPessoa = valorPizza / numPessoas
+        resposta.innerHTML = `Cada um dos ${numPessoas} amigos vai pagar R$${valorPorPessoa}`;
+    }
+</script>

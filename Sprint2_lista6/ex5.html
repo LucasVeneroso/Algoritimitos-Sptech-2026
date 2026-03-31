@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    insira uma senha <input type="text" id="inp_senha" oninput="analisar()"> <br>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        let senha = inp_senha.value;
+        
+        if(senha.includes('a') || senha.includes('A')){
+            senha = senha.toString().replaceAll('a', '@')
+            senha = senha.toString().replaceAll('A', '@')
+        }
+        if(senha.includes('e') || senha.includes('E')){
+            senha = senha.toString().replaceAll('e', '3')
+            senha = senha.toString().replaceAll('E', '3')
+        }
+        resposta.innerHTML = `${senha}`
+    }
+</script>

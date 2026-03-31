@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inp_temperatura">
+    <button onclick="analisar()">Calcular</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    // Se estiver menor que 10 está "Congelante"
+    // Se estiver entre 10 e 19 está "Frio"
+    // Se estiver entre 19 e 27 está "Agradável"
+    // Se estiver entre 27 e 30 está "Calor"
+    function analisar(){
+        let temperatura = Number(inp_temperatura.value);
+        if(temperatura < 10){
+            div_mensagem.innerHTML = `está congelante`
+        } else if (temperatura <= 19){
+            div_mensagem.innerHTML = `está frio`
+        } else if (temperatura <= 27){
+            div_mensagem.innerHTML = `está agradável`
+        } else if (temperatura <= 30){
+            div_mensagem.innerHTML = `está calor`
+        } else {
+            div_mensagem.innerHTML = `está fervendo`
+        }
+    }
+</script>

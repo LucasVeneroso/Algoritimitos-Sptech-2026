@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    informe o minimo de um intervalo: <input type="text" id="inp_intervaloMin"><br>
+    informe o máximo de um intervalo: <input type="text" id="inp_intervaloMax"><br>
+    <button onclick="analisar()">Curto 3 e 5!</button>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+    contador = 0;
+    function analisar(){
+        let intervaloMin = Number(inp_intervaloMin.value);
+        let intervaloMax = Number(inp_intervaloMax.value);
+        let intervalo = intervaloMax - intervaloMin;
+        let mensagem = ``
+        contador = intervaloMin
+        while (contador < intervaloMax){
+            contador++;
+            if(contador % 5 == 0 && contador % 3 == 0){
+                mensagem += `É TRI!É PENTA!  <br>`
+            } else if(contador % 5 == 0){
+                mensagem += `É PENTA! <br>`
+            } else if(contador % 3 == 0) {
+                mensagem += `É TRI! <br>`
+            } else{
+                mensagem += `${contador} <br>`
+            }
+        }
+        resposta.innerHTML = `${mensagem} <br>`
+    }
+</script>

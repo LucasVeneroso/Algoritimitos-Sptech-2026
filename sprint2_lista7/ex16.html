@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    insira a cada quantos dias você treina: <input type="text" id="inp_dias" ><br>
+    <button onclick="analisar()">Exibir rotina mensal</button>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        let contador = 0;
+        let numDias = Number(inp_dias.value);
+        let mensagem = ``
+        while(contador < 30){
+            contador++;
+            if((contador - 1) % numDias == 0 || contador == 1){
+                mensagem += `Musculação <br>`
+                resposta.innerHTML += `Dia ${contador} - Musculação <br>`
+            } else {
+                resposta.innerHTML += `Dia ${contador} - Comer, dormir etc <br>`
+            }
+        }
+    }
+</script>

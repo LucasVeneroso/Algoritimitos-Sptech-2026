@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a última série assistida: <input type="text" id="inp_nomeSerie"><br>
+    Insira a quantidade de episódios assistidos: <input type="text" id="inp_numEps"><br>
+    <button onclick="Calcular()">Verificar Nível</button>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+    let tempoEpmin = 22;
+    function Calcular(){
+        let nomeSerie = inp_nomeSerie.value;
+        let numEps = Number(inp_numEps.value);
+        let tempoAssistido = (tempoEpmin * numEps) / 60
+        if (tempoAssistido >= 30)
+        {
+            resposta.innerHTML = `Vejo que você gosta da série ${nomeSerie} <br> Uau, você realmente gosta dessa série`
+        } else {
+            resposta.innerHTML = `Vejo que você gosta da série ${nomeSerie}`
+        }
+    }
+</script>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Velocidade do carro: <input id="input_vel" /><br />
+    Limite da via: <input id="input_limite" /><br />
+
+    <button onclick="verificar()">Verificar</button>
+
+    <div id="resultado"></div>
+  </body>
+</html>
+<script>
+  function verificar() {
+    let vel = Number(input_vel.value);
+    let limite = Number(input_limite.value);
+
+    let limite20 = limite * 1.2;
+
+    if (vel <= limite) {
+      resultado.innerHTML = `Velocidade dentro do limite. Boa direção!`;
+    } else if (vel <= limite20) {
+      resultado.innerHTML = `Atenção! Excedendo o limite permitido.`;
+    } else {
+      resultado.innerHTML = `Multa grave! Velocidade muito acima do permitido.`;
+    }
+  }
+</script>

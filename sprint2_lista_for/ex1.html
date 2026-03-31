@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="contar()">contar</button>
+    <div id="resposta"></div>
+  </body>
+</html>
+<script>
+  function contar() {
+    let mensagem = "";
+    for (i = 0; i < 16; i++) {
+      mensagem += `${i} <br>`;
+    }
+    resposta.innerHTML += `${mensagem}`;
+  }
+</script>

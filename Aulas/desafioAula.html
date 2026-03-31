@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body id="body">
+    insira o peso da carga: <input type="text" id="inp_carga" /><br />
+    insira a distância do envio (em km):
+    <input type="text" id="inp_distancia" /><br />
+    Tipo de transporte<select id="selectTransporte">
+      <option value="1">Comum</option>
+      <option value="2">Frágil</option>
+      <option value="3">Perigoso</option>
+    </select>
+    <br />
+    insira o código de rastreio:
+    <input type="text" id="inp_codigoRastreio" /><br />
+    <button id="botao" onclick="calcular()">Calcular Frete</button>
+    <div id="resposta"></div>
+  </body>
+</html>
+
+<script>
+  let contador = 3;
+  function calcular() {
+    let peso = Number(inp_carga.value);
+    let distância = Number(inp_distancia.value);
+    let codigoRastreio = Number(inp_codigoRastreio.value);
+    let tipoCarga = selectTransporte.value;
+    let valorBase = peso * 12.5;
+
+    if (peso <= 0 && peso > 500) {
+      alert(`Peso inválido para transporte aéreo!`);
+    }
+    if (distância < 10 || distância > 10000) {
+      alert(`Distância fora da nossa cobertura!`);
+    }
+
+    if (selectTransporte.value == 2) {
+      valorBase *= 1.15;
+    } else if (selectTransporte.value == 3) {
+      valorBase *= 1.25;
+    }
+
+    if (peso > 100 && distância > 2000) {
+      valorBase += valorBase - 0.1;
+    }
+    if (contador > 0){
+    if (codigoRastreio % 2 != 0) {
+      resposta.innerHTML = `<p style="color: red;">CARGA BLOQUEADA: Código de rastreio inválido para este lote!</p>`;
+      contador--;
+      botao.disable()
+    } else {
+      resposta.innerHTML = `Valor total do frete: R$${valorBase} <br>
+                            Status do Envio: Envio Padrão`;
+    }
+    if (selectTransporte == 2 || distância < 500) {
+      resposta.innerHTML = `Valor total do frete: R$${valorBase} <br>
+                            Status do Envio: Envio Prioritário.`;
+    }
+  }
+  body.innerHTML = ``
+}
+</script>

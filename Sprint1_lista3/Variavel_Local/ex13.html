@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Inserir o valor da passagem: <input type="text" id="input_valorPassagem"><br>
+    Inserir a quantidade de viagens: <input type="text" id="input_numViagens"><br>
+    Inserir a distância da viagem (Em Km): <input type="text" id="input_distViagem"><br>
+    <button onclick="Calculo()">Calcular VT</button>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+    function Calculo(){
+        //onibus
+        let valorPassagem = Number(input_valorPassagem.value);
+        let numViagens = Number(input_numViagens.value);
+        //Aplicativo
+        let distViagem = Number(input_distViagem.value);
+        let viagemApp = (numViagens * 0.10);
+        numViagens -= (numViagens * 0.10);
+        //Calculo de valor
+        let valorOnibus = numViagens*valorPassagem;
+        let valorApp = viagemApp * (distViagem * 0.75);
+        let valorTotal = valorOnibus + valorApp;      
+        resposta.innerHTML = `Você vai gastar R$${valorTotal} por mês com transporte`
+    }
+</script>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="analisar()">Diga algo sobre a matéria de Algoritmos</button>
+    <div id="resposta"></div>
+  </body>
+</html>
+<script>
+  contador = 1;
+  function analisar() {
+    let mensagem = '';
+    while (contador < 8) {
+      mensagem += `${contador}.O While repete infinitamente se não colocar uma restrição <br>`
+      contador++;
+    }
+    resposta.innerHTML += `${mensagem}`;
+  }
+</script>

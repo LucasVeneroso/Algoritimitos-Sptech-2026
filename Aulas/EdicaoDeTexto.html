@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="ipt_frase" oninput="analisar()" />
+    <div id="div_mensagem"></div>
+  </body>
+</html>
+<script>
+  function analisar() {
+    let frase_original = ipt_frase.value;
+    let mensagem = ``;
+    let tamanho = frase_original.length;
+
+    mensagem += `Tamanho da frase: ${tamanho}<br>`;
+
+    let frase_maiuscula = `Frase maiúscula: ${frase_original.toUpperCase()}`;
+    let frase_minúscula = `Frase maiúscula: ${frase_original.toLowerCase()}`;
+
+    mensagem += `Frase maiúscula: ${frase_original.toUpperCase()} <br>
+        Frase minuscula: ${frase_original.toLowerCase()}`;
+
+    let primeira_letra = frase_original[0];
+    let terceira_letra = frase_original[2];
+    let ultima_letra = frase_original[tamanho - 1];
+
+    mensagem += `Primeira letra: ${primeira_letra} <br> terceira letra: ${terceira_letra} <br> ultima letra: ${ultima_letra}<br>`;
+
+    let posicao_com = frase_original.indexOf(".com");
+    let tem_com = frase_original.includes(".com");
+    let termina_com = frase_original.endsWith(".com");
+    let comeca_com = frase_original.startsWith(".com");
+    let trocar_a_b = frase_original.replace("a", "b");
+    let trocar_a_b_todos = frase_original.replaceAll("a", "b").replaceAll("A", "b");
+    let trocar_espacos = frase_original.replaceAll(" ", "");
+    let recortar = frase_original.substring(0,4);
+
+    mensagem += `${posicao_com} <br> Tem .com? ${tem_com} <br> Termina com: ${termina_com} <br> comeca com .com: ${comeca_com} <br>
+    texto convertido: ${trocar_a_b} <br> Texto inteiro convertido: ${trocar_a_b_todos} <br> Sem espaços: ${trocar_espacos} <br> 
+    Recorta parte do Texto: ${recortar}`;
+
+    div_mensagem.innerHTML = `${mensagem}`;
+  }
+</script>

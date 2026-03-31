@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    insira o numero de voltas que um carro dará em uma corrida
+    <input type="text" id="inp_numVoltas" /><br />
+    <button onclick="analisar()">Iniciar Corrida</button>
+    <div id="resposta"></div>
+  </body>
+</html>
+<script>
+  contador = 1;
+  function analisar() {
+    let numVoltas = Number(inp_numVoltas.value);
+    let mensagem = "";
+    while (contador < numVoltas + 1) {
+      mensagem += `Carro dando a ${contador}ª volta  <br>`;
+      contador++;
+    }
+    resposta.innerHTML = `${mensagem} <br> Corrida Finalizada`;
+  }
+</script>

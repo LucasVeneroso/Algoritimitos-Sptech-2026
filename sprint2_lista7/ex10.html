@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    insira um numero
+    <input type="text" id="inp_num1" /><br>
+    insira outro número
+    <input type="text" id="inp_num2" /><br>
+    <button onclick="analisar()">S2 Pares</button>
+    <div id="resposta"></div>
+  </body>
+</html>
+<script>
+  function analisar() {
+    let contador = 0;
+    let num1 = Number(inp_num1.value);
+    let num2 = Number(inp_num2.value);
+    let mensagem = "";
+    contador = num1;
+      while (contador < num2) {
+        if(contador % 2 == 0){
+          mensagem += `${contador} <br>`
+        }
+        contador++;
+      }
+    resposta.innerHTML = `${mensagem}`;
+  }
+</script>

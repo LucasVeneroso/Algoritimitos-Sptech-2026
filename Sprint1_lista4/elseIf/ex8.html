@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Meta: <input id="input_meta"><br>
+Economia atual: <input id="input_economia"><br>
+
+<button onclick="analisar()">Analisar economia</button>
+
+<div id="resultado"></div>
+
+
+</body>
+</html>
+<script>
+function analisar(){
+    let meta = Number(input_meta.value);
+    let economia = Number(input_economia.value);
+
+    if(economia == meta){
+        resultado.innerHTML = `Parabéns, meta alcançada!`;
+    }
+    else if(economia > meta){
+        let diferenca = economia - meta;
+        resultado.innerHTML = `Parabéns, meta alcançada! <br> Meta ultrapassada em ${diferenca}`;
+    }
+    else{
+        let falta = meta - economia;
+        resultado.innerHTML = `Força! Ainda em busca da meta! Falta ${falta}`;
+    }
+}
+</script>

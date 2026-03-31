@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    insira a quantidade de homens: <input type="text" id="inp_qtdHomens"><br>
+    insira a quantidade de Mulheres: <input type="text" id="inp_qtdMulheres"><br>
+    <button onclick="Calcular()">Analisar peso</button>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+    function Calcular(){
+        let qtdHomens = Number(inp_qtdHomens.value);
+        let qtdMulheres = Number(inp_qtdMulheres.value);
+        let mediaPeso = (qtdHomens * 80) + (qtdMulheres * 60)
+        if(mediaPeso <= 800){
+            resposta.innerHTML = `Este elevador suporta 800 Kg e o peso estimado desta lotação é de ${mediaPeso}kg`
+        } else{
+            resposta.innerHTML = `Este elevador suporta 800 Kg e o peso estimado desta lotação é de ${mediaPeso}kg <p style="color: blue"> Será necessário que alguém desça para que o elevador se movimente</p>`
+
+        }
+    }
+</script>

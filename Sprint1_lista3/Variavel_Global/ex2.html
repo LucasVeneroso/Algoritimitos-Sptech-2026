@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quanto será depositado ou retirado? <input type="text" id="input_transacao"><br>
+    <button onclick="depositar()">Depositar</button>
+    <button onclick="retirar()">Retirar</button>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+    
+    let saldo = 0
+    function depositar(){
+        let transacao = Number(input_transacao.value)
+        saldo += transacao;
+        resposta.innerHTML = ` Depósito de R$${transacao} efetuado! Saldo atual: R$${saldo}`;
+    }
+    function retirar(){
+        let transacao = Number(input_transacao.value)
+        saldo -= transacao;
+        resposta.innerHTML = ` Retirada de R$${transacao} efetuada! Saldo atual: R$${saldo}`;
+    }
+</script>

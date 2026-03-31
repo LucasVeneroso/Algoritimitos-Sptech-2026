@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Insira o tipo de passagem:
+    <select id="tipo_bilhete">
+      <option value="1">Comum</option>
+      <option value="2">Estudante</option>
+      <option value="3">Idoso/PNE</option>
+    </select>
+    <br />
+    insira o tipo de passagem:
+    <select id="tipo_passagem">
+      <option value="1">Passagem única</option>
+      <option value="2">Passagem integração</option>
+    </select>
+    <br />
+    <button onclick="calcular()">Simular preço</button>
+    <div id="resposta"></div>
+  </body>
+</html>
+<script>
+  function calcular() {
+    let passagemUnica = 4.4;
+    let passagemIntegracao = 5.9;
+    let mensagem = ``;
+
+    if (tipo_bilhete.value == "3") {
+      mensagem = `Gratuidade`;
+    } else if (tipo_passagem.value == "1" && tipo_bilhete.value == "1") {
+      mensagem = `Valor da passagem escolhida: R$${passagemUnica} `;
+    } else if (tipo_passagem.value == "1" && tipo_bilhete.value == "2") {
+      mensagem = `Valor da passagem escolhida: R$${passagemUnica / 2} `;
+    } else if (tipo_passagem.value == "2" && tipo_bilhete.value == "2") {
+      mensagem = `Valor da passagem escolhida: R$${passagemIntegracao / 2} `;
+    } else {
+      mensagem = `Valor da passagem escolhida: R$${passagemIntegracao} `;
+    }
+    resposta.innerHTML = `${mensagem}`
+  }
+</script>

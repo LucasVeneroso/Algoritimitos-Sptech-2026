@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Número: <input id="input_numero" /><br />
+
+    <button onclick="verificar()">Múltiplo de 5</button>
+
+    <div id="resultado"></div>
+  </body>
+</html>
+<script>
+  function verificar() {
+    let num = Number(input_numero.value);
+
+    if (num <= 0) {
+      resultado.innerHTML = `Digite um número maior que zero`;
+    } else {
+      let resto = num % 5;
+
+      if (resto == 0) {
+        resultado.innerHTML = `Perfeito, esse número é múltiplo de cinco`;
+      } else if (resto == 1) {
+        resultado.innerHTML = `Vich, sobrou um`;
+      } else if (resto == 2) {
+        resultado.innerHTML = `Para esse o resto é dois`;
+      } else if (resto == 3) {
+        resultado.innerHTML = `Com mais dois daria certo`;
+      } else {
+        resultado.innerHTML = `Só faltou 1 para ser múltiplo de 5`;
+      }
+    }
+  }
+</script>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div_1">
+    Insira o numero de copos da água <input type="number" id="num_copos"><br><br>
+    Insira o Tempo de monitoramento <input type="number" id="temp_monitoramento" placeholder="(Em minutos)"><br><br>
+    <button onclick="imprimir()">Finalizar Monitoramento</button><br><br>
+    </div>
+    <div id="div_2"></div>
+    <div id="div_3"></div>
+</body>
+</html>
+<script>
+    function imprimir(){
+        div_2.innerHTML = 'Você bebeu ' + num_copos.value + ' copos de água!'
+        div_3.innerHTML = "O monitoramento durou " + temp_monitoramento.value + " minutos."
+    }
+</script>

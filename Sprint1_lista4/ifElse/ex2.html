@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a quantidade de latas que você toma por dia: <input type="text" id="input_qtdLatas"><br>
+    <button onclick="calcular()">Quantos refris</button>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+    let ano = 365;
+    function calcular(){
+        let qtdLatas = Number(input_qtdLatas.value);
+        let consumo = qtdLatas * ano;
+        if (consumo < 500){
+            resposta.innerHTML = `Você consumiu ${consumo}`
+        } else {
+            resposta.innerHTML = `Cuidado coma diabetis`
+        }
+    }
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a quantidade de KWh consumida no mês: <input type="text" id="input_energiaConsumida">
+    <br>
+    <button onclick="Calcular()">Calcular conta de luz</button>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+    function Calcular(){
+        let energiaConsumida = Number(input_energiaConsumida.value);
+        let valorContaLuz = energiaConsumida * 0.85
+        let valorContaLuzDesconto = valorContaLuz - (valorContaLuz * 0.10)
+        if (energiaConsumida < 100){
+            alert(valorContaLuzDesconto)
+        } else{
+            alert(valorContaLuz)
+        }
+
+    }
+</script>

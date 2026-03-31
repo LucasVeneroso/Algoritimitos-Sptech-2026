@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    insira letras <input type="text" id="inp_letras">
+    <button onclick="verificar()">Verificar Letras</button>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+    let palavra = "Morango"
+    function verificar(){
+        let letras = inp_letras.value
+        if (palavra.includes(letras)){
+            resposta.innerHTML = `A letra ${letras} aparece na palavra secreta!`
+        } else {
+            resposta.innerHTML = `A letra ${letras} não aparece na palavra secreta!`
+        }
+    }
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o valor de venda das peça: <input type="text" id="input_valorPeca"><br>
+    Insira o valor dos serviço: <input type="text" id="input_valorServico"><br>
+    insira o valor do imposto em cima da peça: <input type="text" id="input_taxaPeca"><br>
+    Insira o valor do imposto em cima do serviço: <input type="text" id="input_taxaServico"><br>
+    Insira os gastos do mês <input type="text" id="input_gastos"><br>
+    <button onclick="Custos()">Acumular</button>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+        let mes = 0;   
+        let lucro = 0;
+    function Custos(){ 
+        //Receber valóres
+        let valorPeca = Number(input_valorPeca.value);
+        let valorServico = Number(input_valorServico.value);
+        let taxaPeca = Number(input_taxaPeca.value);
+        let taxaServico = Number(input_taxaServico.value);
+        let gastos = Number(input_gastos.value);
+        //regra de negócio
+        let percentualPeca = valorPeca * (taxaPeca / 100);
+        let percentualServico = valorServico * (taxaServico / 100);
+        let taxaTotal = percentualPeca + percentualServico
+        let totalRecebido = valorPeca + valorServico;
+        valorPeca *= percentualPeca;
+        valorServico *= percentualServico;
+        let saldo =  totalRecebido - (taxaTotal + gastos);
+        mes += 1;
+        lucro += saldo;
+        resposta.innerHTML += `Resumo do mês ${mes}, Total recebido = R$${totalRecebido} – Valor do Imposto = R$${taxaTotal} – Saldo Final de R$${saldo} – Acumulado até o Momento = R$${lucro} <br>`;
+    };
+</script>

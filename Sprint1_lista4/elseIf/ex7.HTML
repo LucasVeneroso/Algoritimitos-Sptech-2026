@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    insira o número de pães comidos diariamente: <input type="text" id="inp_numPaes"> <br>
+    insira o número de pacote de bolacha comidos diariamente: <input type="text" id="inp_numBolachas"> <br>
+    insira o número de achocolatados que são tomados diariamente: <input type="text" id="inp_numachocolatado"> <br>
+    <button onclick="calcular()">Verificar as calorias</button>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        let numPaes = Number(inp_numPaes.value)
+        let numBolachas = Number(inp_numBolachas.value)
+        let numAchocolatado = Number(inp_numachocolatado.value)
+        let caloriaPao = numPaes * 50;
+        let caloriaBolacha = numBolachas * 80;
+        let caloriasAchocolatado = numAchocolatado * 70;
+        let caloriasTotais = caloriaBolacha + caloriaPao + caloriasAchocolatado;
+        let mensagem = ``
+        if(caloriasTotais > 400) {
+            mensagem = `Alerta crítico de saúde !!!`
+    } else if (caloriasTotais >= 200){
+    mensagem = `Cuidado, vai ficar menos saudável !`
+    }else if (caloriasTotais < 200){
+        mensagem = `Parabéns, vai ficar em forma!`
+    }
+    resposta.innerHTML = `${mensagem}`;
+    }
+</script>

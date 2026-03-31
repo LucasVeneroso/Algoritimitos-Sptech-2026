@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    insira os filmes que você gosta, comece pelo seu favorito:
+    <input type="text" id="inp_filmes" />
+    <button onclick="adicionar()">Cadastrar filme</button>
+    <button onclick="exibir()">Ver Favoritos</button>
+    <div id="resposta"></div>
+  </body>
+</html>
+<script>
+  let lista = [];
+  function adicionar() {
+    let filme = inp_filmes.value;
+    lista.push(filme);
+  }
+  function exibir() {
+    resposta.innerHTML = ` O que filme que mais gosta é ${lista[0]} <br>
+                            E desses, o que menos gosta é ${lista[lista.length - 1]} `;
+  }
+</script>

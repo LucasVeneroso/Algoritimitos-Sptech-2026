@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        Temperatura atual: <input id="temp_atual" type="number"> <br>
+        Condição do clima: <input id="clima_atual" type="text"> <br>
+        <button onclick="mostrarIformacoes()">Ver Dica</button>
+    </div>
+</body>
+</html>
+<script>
+    function mostrarIformacoes(){
+        alert("Está fazendo " + temp_atual.value + " graus e o dia está " + clima_atual.value)
+    }
+</script>

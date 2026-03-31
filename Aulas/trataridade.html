@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    idade <input type="text" id="inp_idade"> <br>
+    <button onclick="analisar()">Verificar idade</button>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+    function analisar() {
+        let idade = Number(inp_idade.value);
+        if (idade > 18){
+            resposta.innerHTML = `Você é maior que 18 anos`
+        } else if (idade = 18){
+            resposta.innerHTML = `Você tem 18 anos `
+        } else if (idade >= 16) {
+            resposta.innerHTML = `Você tem mais que 16 anos`
+        } else {
+            resposta.innerHTML = `Você tem 16 anos`
+        }
+    }
+</script>

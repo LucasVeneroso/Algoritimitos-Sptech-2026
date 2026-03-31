@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a nota 1 <input type="text" id="input_num1">
+    Insira a nota 2 <input type="text" id="input_num2">
+    Insira a nota 3 <input type="text" id="input_num3">
+    <button onclick="media()">Analisar desempenho</button>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+    function media(){
+        let num1 = Number(input_num1.value);
+        let num2 = Number(input_num2.value);
+        let num3 = Number(input_num3.value);
+        let media = (num1 + num2 + num3) / 3
+        if (media < 9.4){
+        resposta.innerHTML = `Sua média foi ${media} `
+    } else {
+            resposta.innerHTML = `Sua média foi ${media} Parabéns`
+
+        }
+    }
+</script>

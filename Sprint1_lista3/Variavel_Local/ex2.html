@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    insira a idade <input type="text" id="input_idade"><br>
+    <button onclick="AposentadoriaHomem()">Aposentadoria Homem</button>
+    <button onclick="AposentadoriaMulher()">Aposentadoria Mulher</button>
+
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+    function AposentadoriaHomem(){
+        let idade = Number(input_idade.value);
+        let aposentar = 70;
+        let resultado = aposentar - idade // Poderia usar um if aqui:
+        /*
+        if(resultado > 0) {
+            resposta.innerHTML = `Falta ${resultado} para você se aposentar`
+        } else {
+            resposta.innerHTML =`você já é aposentado`
+        }
+        */
+        resposta.innerHTML = `Falta ${resultado} para você se aposentar`
+    }
+    function AposentadoriaMulher(){
+        let idade = Number(input_idade.value);
+        let aposentar = 60;
+        let resultado = aposentar - idade // Poderia usar um if aqui também:
+        /*
+        if(resultado < 60) {
+            resposta.innerHTML = `Falta ${resultado} para você se aposentar`
+        } else {
+            resposta.innerHTML =`você já é aposentada`
+        }
+        */
+        resposta.innerHTML = `Falta ${resultado} para você se aposentar`
+    }
+    
+</script>

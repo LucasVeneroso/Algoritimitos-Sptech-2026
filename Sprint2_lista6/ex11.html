@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    insira os lugares que você já morou: <input type="text" id="inp_bairros">
+    <button onclick="cadastrar()">Cadastrar Bairro</button>
+    <br><br>
+    Digite o número correspondente ao bairro que deseja visualizar: <input type="text" id="inp_numBairro">
+    <button onclick="pesquisarBairro()">Relembrar moradia</button>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+    let lista = [];
+    function cadastrar(){
+        let bairros = inp_bairros.value;
+        lista.push(bairros);
+    }
+    function pesquisarBairro(){
+        let numBairro = Number(inp_numBairro.value)
+        resposta.innerHTML = lista[numBairro - 1]    
+        }
+</script>

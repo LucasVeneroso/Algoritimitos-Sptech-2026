@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Como você está hoje: <input id="input_humor" /><br />
+
+    <button onclick="mostrar()">Mostrar Humor</button><br><br>
+
+    <div id="resultado"></div>
+  </body>
+</html>
+<script>
+  function mostrar() {
+    let humor = input_humor.value;
+
+    if (humor == "Feliz") {
+      resultado.innerHTML = `😊`;
+    } else if (humor == "Triste") {
+      resultado.innerHTML = `😢`;
+    } else if (humor == "Bravo") {
+      resultado.innerHTML = `😡`;
+    } else if (humor == "Surpreso") {
+      resultado.innerHTML = `😲`;
+    } else if (humor == "Cansado") {
+      resultado.innerHTML = `😴`;
+    }
+  }
+</script>

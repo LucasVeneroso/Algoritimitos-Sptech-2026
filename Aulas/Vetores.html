@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    insira uma fruta: <input type="text" id="inp_fruta">
+    <button onclick="adicionarFruta()">Adicionar</button>
+    <button onclick="analisar()">Analisar Lista</button>
+    <hr>
+    Posicao: <input type="text" id="inp_posicao">
+    <button onclick="pesquisar()">pesquisar</button>
+    <button onclick="remover()">Remover Última</button>
+    <button onclick="incluiFruta()">Tem fruta</button>
+
+    <hr>
+    <div id="resposta"></div>
+
+
+
+
+  </body>
+</html>
+<script>
+  
+    
+    let lista = ["uva", "banana", "maça"];
+    function adicionarFruta() {
+        let fruta = inp_fruta.value
+        lista.push(fruta);
+        resposta.innerHTML = `${lista}`
+  }
+
+  function analisar(){
+    resposta.innerHTML = `tamanho ${lista.length} <br>
+    Primeira fruta: ${lista[0]} <br>
+    Ultima fruta: ${lista[lista.length - 1]} <br>
+    Lista: ${lista.toString().replaceAll(',', '<br>')}`
+  }
+
+  function pesquisar(){
+    let posicao = inp_posicao.value;
+    
+    if(posicao <= 0 || posicao > lista.length){
+        alert('Posicao inválida')
+    } else{
+        resposta.innerHTML = `Fruta: ${lista[posicao - 1] }`
+    }
+  }
+  function remover(){
+    let frutaRemovida = lista.pop();
+
+    resposta.innerHTML = `${fruta} Removida <br>Lista: ${lista.toString().replaceAll(',', '<br>')}`
+  }
+
+  function incluiFruta(){
+    let fruta = inp_fruta.value;
+    let inclui = lista.includes(fruta);
+    if(inclui){
+        resposta.innerHTML = `Tem: ${fruta} na posição ${lista.indexOf(fruta) + 1}`
+    } else {
+        resposta.innerHTML = `A fruta ${fruta} não está inclusa`
+        
+    }
+  }
+</script>

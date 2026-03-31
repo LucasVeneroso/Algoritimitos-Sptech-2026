@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira os dias em operação: <input type="text" id="input_tempoOperacao"><br>
+    <button onclick="processar()">Processar dias</button> 
+    <button onclick="stopOperacao()">Stop operação</button> 
+    <button onclick="reiniciar()">reiniciar</button> 
+    <div id="resposta"></div> 
+</body>
+</html>
+<script>
+    let tempoVida = 1000;
+    function processar(){
+        let tempoOperacao = Number(input_tempoOperacao.value);
+        let tempoRestante = tempoVida - (tempoOperacao * 24) ;
+        resposta.innerHTML += ` O TVM anterior era de ${tempoVida} horas e após ${tempoOperacao} dias de operação o TVM passou para ${tempoRestante} horas <br>`
+        tempoVida -= (tempoOperacao * 24);
+    }
+    function stopOperacao(){
+        let tempoOperacao = Number(input_tempoOperacao.value);
+        tempoVida - 100;
+        resposta.innerHTML += ` O TVM anterior era de ${tempoVida} horas, após o Stop de operação o TVM passou para ${tempoVida -= 100} horas <br>`
+    }
+    function reiniciar(){
+        let tempoOperacao = Number(input_tempoOperacao.value);
+        
+        resposta.innerHTML = ` Ainda existia ${tempoVida} horas, com o reinicio do processo, o TVM passou para 1000 horas. <br>`
+        tempoVida = 1000;
+    }
+    
+</script>

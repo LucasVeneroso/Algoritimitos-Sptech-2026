@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a nota da continuada: <input type="text" id="input_notaContinuada"><br>
+    Insira a nota semestral: <input type="text" id="input_notaSemestral"><br>
+    Insira o nome: <input type="text" id="input_nome"><br>
+    <button onclick="Media()">Média</button><br>
+    <div id="resposta"></div>
+
+</body>
+</html>
+<script>
+    function Media(){
+        let nome = input_nome.value;
+        let notaContinuada = Number(input_notaContinuada.value);
+        let notaSemestral = Number(input_notaSemestral.value);
+        let media = (notaContinuada * 0.40) + (notaSemestral * 0.60); 
+        resposta.innerHTML = `A média de ${nome} será de ${media}`
+        }
+</script>

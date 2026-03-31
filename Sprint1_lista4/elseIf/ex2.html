@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    insira a renda familiar: <input type="text" id="inp_renda">
+    <button onclick="analisar()">Calcular</button>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+    let renda = Number(inp_renda.value);
+    let mensagem = ``;
+    if (renda > 9500){
+        mensagem = `Classe A`
+    } else if (renda >= 2500){
+        mensagem = `Classe B`
+    } else if (renda >= 900){
+        mensagem = `Classe C`
+    } else if (renda >= 250){
+        mensagem = `Classe D`
+    } else {
+        mensagem = `Classe E`
+    }
+    resposta.innerHTML = `${mensagem}`}
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    insira seu ki <input type="text" id="input_kiBase"><br>
+    transformar em: 
+    <button onclick="ssj1()">SSJ</button>
+    <button onclick="ssj2()">SSJ2</button>
+    <button onclick="ssj3()">SSJ3</button>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+    function ssj1(){
+        let kiBase = Number(input_kiBase.value)
+        kiBase *= 50
+        resposta.innerHTML = `Após se transformar em SSJ, o ki desse Sayajin passa a ser de ${kiBase}`
+    }
+    function ssj2(){
+        let kiBase = Number(input_kiBase.value)
+        kiBase *= 100
+        resposta.innerHTML = `Após se transformar em SSJ2, o ki desse Sayajin passa a ser de ${kiBase}`
+    }
+    function ssj3(){
+        let kiBase = Number(input_kiBase.value)
+        kiBase *= 200 
+        resposta.innerHTML = `Após se transformar em SSJ3, o ki desse Sayajin passa a ser de ${kiBase}`
+    }
+</script>

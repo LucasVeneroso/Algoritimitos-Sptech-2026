@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    insira os filmes que você gosta, comece pelo seu favorito:
+    <input type="text" id="inp_filmes" oninput="exibir()" />
+    <button onclick="adicionar()">Cadastrar filme</button>
+    <div id="resposta"></div>
+  </body>
+</html>
+<script>
+  let lista = [];
+  let contador = 0;
+  function adicionar() {
+    let filme = inp_filmes.value;
+    lista.push(filme);
+    resposta.innerHTML += `${lista[contador]} <br>`
+    contador++;
+  }
+  
+</script>

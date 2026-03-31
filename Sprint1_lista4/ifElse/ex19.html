@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    insira a quatidade de chocolates comprados: <input type="text" id="inp_chocolate"><br>
+    <button onclick="compra()">Compra</button>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+    let valorChocolate = 3;
+    let valorChocolateDesconto = 2.50;
+    function compra(){
+        let numChocolate = Number(inp_chocolate.value);
+        let valorTotal = numChocolate * valorChocolate;
+        let valorTotalDesconto = numChocolate * valorChocolateDesconto
+        if (numChocolate <= 12){
+            resposta.innerHTML = `o valor da sua compra foi de R$${valorTotal.toFixed()}`;
+        } else {
+            resposta.innerHTML = `o valor da sua compra foi de R$${valorTotalDesconto.toFixed()}`;
+        }
+    }
+</script>

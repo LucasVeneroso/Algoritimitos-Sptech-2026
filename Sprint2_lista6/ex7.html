@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    insira a senha <input type="password" id="inp_senha" oninput="avaliar()"/><br />
+    <button onclick="avaliar()"></button>
+    <div id="resposta"></div>
+  </body>
+</html>
+<script>
+  function avaliar() {
+    let senha = inp_senha.value;
+    let forca = 0;
+    let tamanho = senha.length;
+    let mensagem = ``;
+
+    if (senha != senha.toUpperCase() || senha != senha.toLowerCase()) {
+        forca++;
+    }
+    if (senha != senha.toUpperCase() && senha != senha.toLowerCase()) {
+        forca++;
+    }
+    if (tamanho >= 8) {
+      forca++;
+    }
+    if (forca == 1){
+        mensagem = 'Fraca'
+    } else if (forca == 2){
+        mensagem = 'Média'
+    } else if (forca == 3){
+        mensagem = `Forte`
+    } else {
+        mensagem ='Insegura'
+    }
+    resposta.innerHTML = `Senha ${mensagem}`
+  }
+  function trocar(){
+    
+  }
+</script>

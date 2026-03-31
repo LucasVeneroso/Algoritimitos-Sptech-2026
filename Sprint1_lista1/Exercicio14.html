@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div_1">
+    Quantidade de tarefas concluidas: <input type="number" id="num_tarefas"><br><br>
+    Insira o Tempo de foco <input type="number" id="temp_foco" placeholder="(Em minutos)"><br><br>
+    <button onclick="imprimir()">Finalizar tarefas</button><br><br>
+    </div>
+    <div id="div_2"></div>
+</body>
+</html>
+<script>
+    function imprimir(){
+    div_2.innerHTML = `O tempo total de foco foi de ${num_tarefas.value} minutos para realizar ${temp_foco.value} tarefas.`
+    }
+</script>

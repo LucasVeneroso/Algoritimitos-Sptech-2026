@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a idade: <input type="text" id="input_idade">
+    <button onclick="exibirIdade()">Verificar idade</button>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+    function exibirIdade(){
+        let idade = Number(input_idade.value);
+        if (idade < 16){
+            resposta.innerHTML = `Você tem ${idade}, ainda não pode votar e nem dirigir`
+        } 
+        if (idade >= 16){
+            if(idade < 18){
+            resposta.innerHTML = `Você tem ${idade}, você já pode votar mas não pode dirigir`
+        }
+        }
+        if (idade >= 18) {
+            resposta.innerHTML = `Você tem ${idade}, você já pode votar e pode dirigir`
+        }
+    }
+</script>

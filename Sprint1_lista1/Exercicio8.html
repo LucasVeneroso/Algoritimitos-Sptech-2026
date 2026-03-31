@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        Novo filme: <input id="nome_filme" type="text"> <br>
+        Hora da seção: <input id="hora_secao" type="text"> <br>
+        <button onclick="mostrarIformacoes()">Confirmar ingresso</button>
+    </div>
+</body>
+</html>
+<script>
+    function mostrarIformacoes(){
+        alert("Ingresso confirmado para o filme " + nome_filme.value + "no horário " + hora_secao.value)
+    }
+</script>

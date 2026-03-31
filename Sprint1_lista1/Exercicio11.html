@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div_1">
+    Insira o numero de voltas <input type="number" id="num_voltas"><br><br>
+    Insira o Tempo total <input type="number" id="temp_total"><br><br>
+    <button onclick="imprimir()">Finalizar Corrida</button><br><br>
+    </div>
+    <div id="div_2"></div>
+    <div id="div_3"></div>
+</body>
+</html>
+<script>
+    function imprimir(){
+        div_2.innerHTML = 'Você completou ' + num_voltas.value + ' voltas!'
+        div_3.innerHTML = "O tempo total da corrida foi de " + temp_total.value + " minutos."
+    }
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    insira o login (nome de usuário): <input type="text" id="inp_login"><br>
+    insira a senha: <input type="text" id="inp_senha"><br>
+    insira o ano de nascimento: <input type="text" id="inp_dtNasc"><br>
+    <button onclick="verificar()">Autenticar</button>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+    function verificar(){
+        let login = inp_login.value
+        let senha = inp_senha.value
+        let dtNasc = inp_dtNasc.value
+        let mensagem = ``
+        if (login == "ana" && senha == "braga" && dtNasc == "1949" ){
+            mensagem = `Usuário autenticado`
+        } else {
+            mensagem = `Falha na autenticação`
+        }
+        resposta.innerHTML = `${mensagem}`
+    }
+</script>

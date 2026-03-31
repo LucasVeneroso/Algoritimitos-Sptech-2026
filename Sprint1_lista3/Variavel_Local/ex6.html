@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o nome: <input type="text" id="input_nomeAluno"><br>
+    Insira a nota da atividade 1: <input type="text" id="inputativ1"><br>
+    Insira a nota da atividade 2: <input type="text" id="inputativ2"><br>
+    Insira a nota da atividade 3: <input type="text" id="inputativ3"><br>
+    <button onclick="Media()">Mostrar Nota</button>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+    function Media(){
+        let nome = input_nomeAluno.value
+        let ativ1 = Number(inputativ1.value);
+        let ativ2 = Number(inputativ2.value);
+        let ativ3 = Number(inputativ3.value);
+        let soma = ativ1 + ativ2 + ativ3;
+        let media = soma / 3;
+        resposta.innerHTML = `A soma das suas três atividades é: ${soma} <br>
+
+                ${nome}, a média das suas atividades é: ${media} `
+    }
+</script>

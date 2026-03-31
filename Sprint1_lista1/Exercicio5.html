@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        Sua nota na escola: <input id="num_nota" type="number"> <br>
+        <button onclick="opniaoVo()">Opnião da vó</button>
+        <button onclick="opniaoMãe()">Opnião da Mãe</button>
+    <div id="resposta">
+        
+    </div>
+</body>
+</html>
+<script>
+    function opniaoVo(){
+        resposta.innerHTML = 'Muito bem, que neto inteligente, porque tirou' + num_nota.value;
+    }
+    function opniaoMãe(){
+       resposta.innerHTML = 'Não fez mais que tua obrigação com essa nota ' + num_nota.value;
+    }
+</script>

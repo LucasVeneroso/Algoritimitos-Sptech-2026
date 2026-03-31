@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Inserir o valor da passagem: <input type="text" id="input_valorPassagem"><br>
+    Inserir a quantidade de viagens: <input type="text" id="input_numViagens"><br>
+    <button onclick="Calculo()">Ver economia</button>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+    function Calculo(){
+        let valorPassagem = Number(input_valorPassagem.value)
+        let numViagens = Number(input_numViagens.value)
+        let economiaPassagem = valorPassagem/2;
+        let valorTotal = valorPassagem * numViagens;
+        let valorDesconto = economiaPassagem * numViagens;
+        let economiaTotal = valorTotal - valorDesconto;
+        resposta.innerHTML = `Você economizará R$${economiaTotal} por mês`
+    }
+</script>

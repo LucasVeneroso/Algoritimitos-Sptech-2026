@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div_1">
+    Quantidade de videos assistidos: <input type="number" id="num_videos"><br><br>
+    Insira o Tempo total assistido <input type="number" id="temp_assis" placeholder="(Em minutos)"><br><br>
+    <button onclick="imprimir()">Encerrar Sessão</button><br><br>
+    </div>
+    <div id="div_2"></div>
+</body>
+</html>
+<script>
+    function imprimir(){
+    div_2.innerHTML = `Você assistiu ${num_videos.value} vídeos! O tempo total assistido foi de ${temp_assis.value} minutos.`
+    }
+</script>

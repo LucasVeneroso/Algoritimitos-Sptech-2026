@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    usuário: <input type="text" id="inp_usuario"><br>
+    senha: <input type="text" id="inp_senha"><br>
+    <button onclick="validar()">Login</button>
+</body>
+</html>
+<script>
+    function validar(){
+        let usuario = inp_usuario.value;
+        let senha = inp_senha.value;
+        if(usuario == 'admim' && senha == '123'){
+            alert('valido')
+        } else {
+            alert('Tem algo errado')
+        }
+    }
+</script>

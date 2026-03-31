@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    insira o nome da pessoa que você ama <input type="text" id="inp_nome"><br>
+    insira o quanto você ama a pessoa <input type="text" id="inp_num"><br>
+    <button onclick="analisar()">Expressar amor</button>
+    <div id="resposta"></div>
+  </body>
+</html>
+<script>
+  function analisar() {
+    let nome = inp_nome.value;
+    let valor = Number(inp_num.value);
+    let mensagem = '';
+    for (contador = 1; contador < valor + 1; contador++) {
+      mensagem += `${contador} - ${nome}, eu te amo! Sempre lembre disso! <br>`
+    }
+    resposta.innerHTML += `${mensagem}`;
+  }
+</script>

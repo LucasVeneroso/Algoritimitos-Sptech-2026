@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    insira um intervalo máximo <input type="text" id="inp_intervaloMax"><br>
+    insira um intervalo mínimo <input type="text" id="inp_intervaloMin"><br>
+    insira um número <input type="text" id="inp_num"><br>
+    <button onclick="analisar()">Divisível</button>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+    function analisar(){
+        let intervaloMin = Number(inp_intervaloMin.value);
+        let intervaloMax = Number(inp_intervaloMax.value);
+        let num = Number(inp_num.value);
+        let intervalo = intervaloMax - intervaloMin;
+        let mensagem = ''
+        if(num > intervaloMax || num < intervaloMin){
+            alert('Insira um número válido')
+        } else if(num >= 3 || num <= 13){
+            for (contador = intervaloMin; contador < intervaloMax; contador++){
+                if (contador % num != 0)
+                mensagem += `${contador} <br>`
+                }
+            }
+            resposta.innerHTML = mensagem
+        }
+    
+</script>

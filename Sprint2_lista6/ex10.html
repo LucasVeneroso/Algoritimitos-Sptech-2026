@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o destino da viagem <input type="text" id="inp_destino">
+    <button onclick="adicionar()">Adicionar</button>
+    <div id="resposta"></div>
+</body>
+</html>
+<script>
+    let lista = []
+    function adicionar(){
+        let destino = inp_destino.value;
+        lista.push(destino);
+        resposta.innerHTML = `${lista} <br>`
+    }
+</script>
